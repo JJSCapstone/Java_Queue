@@ -1,6 +1,6 @@
 package edu.Shepherd.Queue;
 import static org.junit.jupiter.api.Assertions.*;
-
+import Queue.Node;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -9,7 +9,7 @@ public class Tests {
     @Test
     public void testConstructor()
     {
-        Queue test = new Queue();
+        Queue<String> test = new Queue<String>();
         assertEquals(test.head, null);
     }
 
@@ -17,7 +17,7 @@ public class Tests {
     public void testSize()
     {
         int testSize =5;
-        Queue<Integer> test = new Queue<Integer>();
+        Queue <Integer> test = new Queue<Integer>();
 
         for (int i = 0; i < testSize; i++)
         {
@@ -33,7 +33,7 @@ public class Tests {
         String example = "Justin";
         test.insert(example);
         assertFalse(test.isEmpty());
-        Queue<String> current = test.head;
+        Node<String> current = test.head;
         while (current.next!=null){
             current = current.link;
         }
@@ -48,7 +48,7 @@ public class Tests {
         Queue<Integer> test = new Queue<Integer>();
         test.insert(ex1);
         test.insert (ex2);
-        assertEquals(test.peek().data, ex1);
+        assertEquals(test.peek(), ex1);
 
     }
 
